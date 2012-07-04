@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Randy by dtao</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Randy</h1>
+        <p>Randy makes it that much easier to generate random stuff</p>
+
+        <p class="view"><a href="https://github.com/dtao/randy">View the Project on GitHub <small>dtao/randy</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dtao/randy/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dtao/randy/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dtao/randy">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Randy</h1>
+
+<p>A little library for easily producing random data using Ruby's built-in <code>rand</code> function.</p>
+
+<h2>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'randy'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install randy
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Currently <strong>randy</strong> can produce two kinds of random data (in theory this will change).</p>
+
+<h3>Strings</h3>
+
+<p>The original main purpose of this library is to produce random strings easily.</p>
+
+<p>For example, to produce a random 10-character string:</p>
+
+<pre><code># Example output: BASWCEV3TQ
+Randy.string(10)
+</code></pre>
+
+<p>By default, the result string will comprise characters from the digits 0-9 and the English alphabet.</p>
+
+<p>This can be changed by specifying the characters to be used:</p>
+
+<pre><code># Example output: baaabbabac
+Randy.string(10, "abc")
+</code></pre>
+
+<h3>Numbers</h3>
+
+<p>It's already easy to produce random numbers using Ruby. However, <strong>randy</strong> makes it <em>even easier</em>.</p>
+
+<p>To produce a random <em>integer</em>, just specify a range:</p>
+
+<pre><code># Will include some number between 1 and 10
+Randy.integer(1..10)
+</code></pre>
+
+<p>The result will be consistent with how Ruby ranges work; that is, an inclusive range (<code>..</code>) will potentially include the upper bound while an exclusive range (<code>...</code>) will not.</p>
+
+<p>Admittedly, the above is quite trivial to implement by hand, e.g., with <code>1 + rand(10)</code>. Think of it simply as a nicer interface to <code>rand</code>.</p>
+
+<p>The same functionality is also exposed to decimal values:</p>
+
+<pre><code>Randy.decimal((1.4)..(6.2))
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dtao">dtao</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
